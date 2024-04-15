@@ -1,0 +1,39 @@
+$colors: (
+    text: (
+        primary: #2E325B, //opacité 50% pour input non sélectionner
+        secondary: #FFFFFF,
+        btn: #495AFF ,
+        error: #FF5858,
+        success: #97C154,
+        futur: #FF8103,
+        tactile: #313131,
+    ),
+    background: (
+        primary: #FFFFFF,
+        secondary: #EBEFFF,
+        neutral: #FFFFFF,
+        popup: #2E325B, //opacité 60%
+        message-error: #F44336,
+        message-success: #97C154,
+        message-info: #FFB40B,
+        message-info-dark: #FF6A0D,
+        bandeau: #495AFF,
+        pdf: #1C1C1C,
+        work: #F45F1F,
+        button-grey: #9699AC,
+        button-grey-hover: #CACBD5
+    ),
+    input: (
+        primary-bg: #E8EDFF,
+        primary-bg-focus: #CCD6FA,//opacité 60%
+        secondary-bg: #D4DAEE,// #2E335A, //opacité 10%
+        secondary-bg-focus: #C3C8DE,// #2E335A, //opacité 25%
+    ),
+    button: (
+        primary: #495AFF,
+        select: #2635C4,
+    ),
+    border: (
+        primary: #2E335A, //opacite 50%
+    )
+)
