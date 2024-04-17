@@ -1,13 +1,17 @@
 const Button = (data) => {
 
     const {
-        className,
-        value,
-        onClick
+        className = '',
+        value = null,
+        onClick,
+        children
     } = data;
 
     return (<div className={`Button ${className}`} onClick={onClick}>
-        <p>{value}</p>
+        {value === null
+            ? children
+            : <p>{value}</p>
+        }
     </div>)
 }
 

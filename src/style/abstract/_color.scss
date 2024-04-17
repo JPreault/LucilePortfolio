@@ -1,27 +1,17 @@
 $colors: (
     text: (
-        primary: #2E325B, //opacité 50% pour input non sélectionner
-        secondary: #FFFFFF,
-        btn: #495AFF ,
+        primary: #665255,
+        secondary: #000000,
+        neutral: #FFFFFF ,
         error: #FF5858,
         success: #97C154,
-        futur: #FF8103,
-        tactile: #313131,
     ),
     background: (
-        primary: #FFFFFF,
-        secondary: #EBEFFF,
-        neutral: #FFFFFF,
-        popup: #2E325B, //opacité 60%
-        message-error: #F44336,
-        message-success: #97C154,
-        message-info: #FFB40B,
-        message-info-dark: #FF6A0D,
-        bandeau: #495AFF,
-        pdf: #1C1C1C,
-        work: #F45F1F,
-        button-grey: #9699AC,
-        button-grey-hover: #CACBD5
+        primary: #FFFBF7,
+        secondary: #F4E7D0,
+        neutral: #FFFFFF, 
+        error: #F44336,
+        success: #97C154,
     ),
     input: (
         primary-bg: #E8EDFF,
@@ -30,10 +20,12 @@ $colors: (
         secondary-bg-focus: #C3C8DE,// #2E335A, //opacité 25%
     ),
     button: (
-        primary: #495AFF,
-        select: #2635C4,
+        primary: #EBC39D,
+        primary-hover: #C89D72,
+        secondary: #F4E7D0,
+        secondary-hover: #ebc39b,
     ),
     border: (
-        primary: #2E335A, //opacite 50%
+        primary: #000000, //opacite 25%
     )
 )

@@ -1,48 +1,202 @@
 @font-face {
     font-family: 'Poppins';
-    src: url('../../font/Poppins-Light.woff2') format('woff2');
+    src: url('../../font/Poppins/Poppins-Light.woff2') format('woff2');
     font-weight: 300;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../font/Poppins-Regular.woff2') format('woff2');
+    src: url('../../font/Poppins/Poppins-Regular.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../font/Poppins-Medium.woff2') format('woff2');
+    src: url('../../font/Poppins/Poppins-Medium.woff2') format('woff2');
     font-weight: 500;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../font/Poppins-SemiBold.woff2') format('woff2');
+    src: url('../../font/Poppins/Poppins-SemiBold.woff2') format('woff2');
     font-weight: 600;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../font/Poppins-Bold.woff2') format('woff2');
+    src: url('../../font/Poppins/Poppins-Bold.woff2') format('woff2');
     font-weight: 700;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../font/Poppins-Bold.woff2') format('woff2');
+    src: url('../../font/Poppins/Poppins-Bold.woff2') format('woff2');
     font-weight: 800;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Fjalla One';
-    src: url('../../font/FjallaOne-Regular.woff2') format('woff2');
+    src: url('../../font/FjallaOne/FjallaOne-Regular.woff2') format('woff2');
     font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../font/Cinzel/Cinzel-Regular.ttf') format('truetype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../font/Cinzel/Cinzel-Medium.ttf') format('truetype');         
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../font/Cinzel/Cinzel-SemiBold.ttf') format('truetype');         
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../font/Cinzel/Cinzel-Bold.ttf') format('truetype');         
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../font/Cinzel/Cinzel-ExtraBold.ttf') format('truetype');         
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../font/Cinzel/Cinzel-Black.ttf') format('truetype');         
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Edwardian';
+    src: url('../../font/Edwardian/edwardianscriptitc.ttf') format('truetype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../../font/Lora/Lora-Regular.ttf') format('truetype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../../font/Lora/Lora-Medium.ttf') format('truetype');         
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../../font/Lora/Lora-SemiBold.ttf') format('truetype');         
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src: url('../../font/Lora/Lora-Bold.ttf') format('truetype');         
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LoraItalic';
+    src: url('../../font/Lora/Lora-Italic.ttf') format('truetype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LoraItalic';
+    src: url('../../font/Lora/Lora-MediumItalic.ttf') format('truetype');         
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LoraItalic';
+    src: url('../../font/Lora/Lora-SemiBoldItalic.ttf') format('truetype');         
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'LoraItalic';
+    src: url('../../font/Lora/Lora-BoldItalic.ttf') format('truetype');         
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Moontime';
+    src: url('../../font/Moontime/MoonTime-Regular.ttf') format('truetype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Seasons';
+    src: url('../../font/Seasons/Seasons-Light.otf') format('opentype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Seasons';
+    src: url('../../font/Seasons/Seasons.otf') format('opentype');         
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Seasons';
+    src: url('../../font/Seasons/Seasons-Bold.otf') format('opentype');         
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SeasonsItalic';
+    src: url('../../font/Seasons/Seasons-Light-Italic.otf') format('opentype');         
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SeasonsItalic';
+    src: url('../../font/Seasons/Seasons-Italic.otf') format('opentype');         
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SeasonsItalic';
+    src: url('../../font/Seasons/Seasons-Bold-Italic.otf') format('opentype');         
+    font-weight: 500;
     font-display: swap;
 }
