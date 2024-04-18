@@ -5,19 +5,30 @@
     display: flex;
     flex-direction: column;
     background-color: rgba(var(--clr-background-primary),1);
+    overflow-y: scroll;
 
     .header {
         width: 100%;
-        height: 8em;
+        height: 11rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 1.5rem 2rem;
+        padding: 2rem;
 
         .Logo {
             width: 7rem;
             height: 7rem;
+            padding: 0 0 0 1rem;
+
+            &.spa {
+                background-color: rgba(var(--clr-background-secondary),1);
+                padding: 0 1rem;
+                width: 8rem;
+                height: 8rem;
+                border-radius: 1.5rem;
+                box-shadow: 1px 2px 2px rgba(var(--clr-border-primary), 0.25);
+            }
         }
 
         .separator {
@@ -67,12 +78,48 @@
                 &.selected {
                     text-decoration: underline;
                 }
-                
-                
+            }
 
-                
+            .immersive{
+                position: relative;
+                background-color: rgba(var(--clr-background-secondary),1);
+                padding: 0.5rem;
+                width: 6rem;
+                height: 6rem;
+                border-radius: 1.5rem;
+                box-shadow: 1px 2px 2px rgba(var(--clr-border-primary), 0.25);
+                cursor: pointer;
+
+                svg {
+                    fill: rgba(var(--clr-text-primary),1);
+                }
+
+                .circle {
+                    position: absolute;
+                    top: -0.5rem;
+                    right: -0.5rem;
+                    height: 2rem;
+                    width: 2rem;
+                    border-radius: 1rem;
+                    
+
+                    background-color: rgba(var(--clr-background-error),1);
+
+                    &.spa{
+                        background-color: rgba(var(--clr-background-success),1);
+                    }
+                }
             }
         }
     }
 
+    .content {
+        min-height: calc(100vh - 11rem - 4rem);
+        height: 100vh;
+    }
+
+    .footer {
+        height: 4rem;
+        background-color: rgba(var(--clr-background-secondary),1);
+    }
 }

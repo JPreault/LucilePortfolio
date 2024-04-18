@@ -17,13 +17,12 @@ const Skeletton = () => {
     }
 
     function changeInterface() {
-        const newLocation = pathname.includes('spa') ? 'portfolio' : 'spa';
-        navigate('/' + newLocation);
+        navigate('/' + (!onPortfolio ? 'portfolio' : 'spa'));
     }
 
     return (<div className="Skeletton">
         <div className='header'>
-            <div className='containLogo Logo' onClick={() => navigate(links.home)}>
+            <div className={`containLogo Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                 <Logo />
             </div>
             {onPortfolio && <div className='separator' />}
@@ -37,12 +36,14 @@ const Skeletton = () => {
                 </>}
                 <div className="containLogo immersive" onClick={changeInterface}>
                     <Immersive />
+                    <div className={`circle ${!onPortfolio && 'spa'}`}></div>
                 </div>
             </div >
         </div >
-        <Outlet />
-        <div className='footer'>
+        <div className='content'>
+            <Outlet />
         </div>
+        <div className='footer'></div>
     </div >);
 }
 
