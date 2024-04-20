@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.#{$fp-css-prefix}-rotate-90 {
+    transform: rotate(90deg);
+}
+
+.#{$fp-css-prefix}-rotate-180 {
+    transform: rotate(180deg);
+}
+
+.#{$fp-css-prefix}-rotate-270 {
+    transform: rotate(270deg);
+}
+
+.#{$fp-css-prefix}-flip-horizontal {
+    transform: scale(-1, 1);
+}
+
+.#{$fp-css-prefix}-flip-vertical {
+    transform: scale(1, -1);
+}
+
+.#{$fp-css-prefix}-flip-both,
+.#{$fp-css-prefix}-flip-horizontal.#{$fp-css-prefix}-flip-vertical {
+    transform: scale(-1, -1);
+}
+
+.#{$fp-css-prefix}-rotate-by {
+    transform: rotate(var(--#{$fp-css-prefix}-rotate-angle, none));
+}

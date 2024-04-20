@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+@each $name, $icon in $fp-icons {
+    .#{$fp-css-prefix}-#{$name}::before {
+        content: unquote('"#{ $icon }"');
+    }
+}

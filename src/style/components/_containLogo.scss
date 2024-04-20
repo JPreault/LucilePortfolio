@@ -1,0 +1,10 @@
+.ContainLogo {
+    height: 4rem;
+    width: 4rem;
+
+    svg {
+        height: 100%;
+        width: 100%;
+        fill: rgba(var(--clr-text-secondary),1);
+    }
+}

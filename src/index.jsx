@@ -4,6 +4,7 @@ import './style/main.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Skeletton from './components/Skeletton';
 import Page404 from './view/Page404';
+import Homepage from './view/portfolio/Homepage';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -11,7 +12,7 @@ root.render(
         <Routes>
             <Route path='/' element={<Skeletton />}>
                 <Route path='portfolio'>
-                    <Route index element={<></>} />                             {/*Page d'accueil*/}
+                    <Route index element={<Homepage/>} />                             {/*Page d'accueil*/}
                     <Route path='about' element={<></>} />                             {/*Page A Propos*/}
                     <Route path='skills' element={<></>} />                     {/*Page Expériences et Compétences*/}
                     <Route path='professionalActions' index element={<></>} />  {/*Page Actions Professionnelles*/}

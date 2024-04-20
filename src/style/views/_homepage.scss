@@ -1,0 +1,75 @@
+.Homepage {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+
+    &__top {
+        display: flex;
+        gap: 5rem;
+        justify-content: space-around;
+        align-items: center;
+
+        .portrait {
+            height: 68vh;
+            width: 55.7vh;
+            border-radius: 30vh 30vh 0 0;
+            background-color: rgba(var(--clr-background-secondary));
+            position: relative;
+
+            .bienvenue {
+                position: absolute;
+                left: 45%;
+                top: 15%;
+                height: 30vh;
+                width: 30vh;
+                margin: -16vh 0 0 -15vh;
+
+                *{
+                    fill: rgba(var(--clr-text-primary));
+                }
+            }
+
+            .Lucile {
+                position: absolute;
+                left: 45%;
+                top: 15%;
+
+                height: 49.1vh;
+                width: 32.8vh;
+
+                border-radius: max(0.65rem, 2vh);
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .titlePortfolio {
+            font-family: 'Edwardian';
+            font-size: 15em;
+            margin-top: auto;
+            margin-left: -0.7em;
+            z-index: 2;
+        }
+
+        .titleBeauty {
+            font-family: 'Cinzel';
+            font-weight: 300;
+            font-size: 8em;
+            transform: rotate(-90deg);
+            text-align: center;
+            height: fit-content;
+            margin-left: -2em;
+        }
+    }
+
+    .Button {
+        align-self: end;
+    }
+}

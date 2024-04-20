@@ -1,11 +1,24 @@
+@use "../utilities/mixins" as *; 
+
 .Skeletton {
     width: 100vw;
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
     background-color: rgba(var(--clr-background-primary),1);
     overflow-y: scroll;
+    position: relative;
+    
+    @include touch {
+        .slideMenu {
+            visibility: visible!important;
+        }
+
+        .hiddenOnTouch {
+            visibility: hidden;
+            position: absolute;            
+        }
+    }
 
     .header {
         width: 100%;
@@ -15,6 +28,8 @@
         justify-content: space-between;
         align-items: center;
         padding: 2rem;
+
+        
 
         .Logo {
             width: 7rem;
@@ -34,14 +49,14 @@
         .separator {
             flex-grow: 2;
             height: 0.1rem;
-            margin: 4rem;
+            margin: 2rem;
             background-color: rgba(var(--clr-text-primary),1);
         }
 
         .Menu {
             display: flex;
             flex-direction: row;
-            gap: 4rem;
+            gap: min(4rem, 2vw);
             align-items: center;
 
             .menuButton {
@@ -113,13 +128,62 @@
         }
     }
 
-    .content {
+    .PageLayout {
         min-height: calc(100vh - 11rem - 4rem);
-        height: 100vh;
+        padding: 0 2rem;
     }
 
     .footer {
         height: 4rem;
         background-color: rgba(var(--clr-background-secondary),1);
+    }
+
+    .slideMenu {
+        visibility: hidden;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 50;
+        transition: transform 0.4s;
+        transform: translateX(-15em);
+
+        &.open {
+            transform: translateX(0em);
+        }
+
+        .navigationMenu {
+            height: 100%;
+            width: 15em;
+            background-color: rgba(var(--clr-button-primary));
+        }
+
+        .displayButton {
+            position: relative;
+            height: 0;
+            width: 6em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .icon {
+                height: 1em;
+                z-index: 4;
+                color: rgba(var(--clr-text-soft));
+                transition: transform 0.4s;
+
+                &.open {
+                    transform: rotate(180deg);
+                }
+            }
+            svg {
+                position: absolute;
+                height: 26.3em;
+                fill: rgba(var(--clr-button-primary));
+            }
+
+        }
     }
 }

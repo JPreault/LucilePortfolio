@@ -2,18 +2,18 @@
     background-color: rgba(var(--clr-button-primary),1);
     color: rgba(var(--clr-text-secondary),1);
     border: none;
-    font-family: 'Fjalla One';
-    font-weight: 300;
+    font-family: 'Cinzel';
     height: fit-content;
     font-size: 18px;
     border-radius: 10px;
     padding: 0.5em 1.3em;
     cursor: pointer;
-    letter-spacing: 1px;
     user-select: none;
+    width: fit-content;
+    font-weight: 400;
 
     &:hover {
-        background-color: rgba(var(--clr-button-select),1);
+        background-color: rgba(var(--clr-button-primary-hover),1);
     }
 
 }

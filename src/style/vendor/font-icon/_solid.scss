@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+@font-face {
+    font-family: $fp-family;
+    font-style: bold;
+    font-weight: 700;
+    font-display: $fp-font-display;
+    src: url('#{$fp-font-path}/font-700.eot?tkws2v');
+    src: url('#{$fp-font-path}/font-700.eot?tkws2v#iefix') format('embedded-opentype'), url('#{$fp-font-path}/font-700.ttf?tkws2v') format('truetype'), url('#{$fp-font-path}/font-700.woff?tkws2v') format('woff'), url('#{$fp-font-path}/font-700.svg?tkws2v#font-900') format('svg');
+}
+
+.fp,
+.fps {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    font-family: $fp-family;
+    font-weight: 700;
+}
