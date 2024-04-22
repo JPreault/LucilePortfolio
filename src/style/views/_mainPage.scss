@@ -2,12 +2,11 @@
 
 .Skeletton {
     width: 100vw;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: rgba(var(--clr-background-primary),1);
-    overflow-y: scroll;
     position: relative;
+    max-height: 100vh;
     
     @include touch {
         .slideMenu {
@@ -18,6 +17,16 @@
             visibility: hidden;
             position: absolute;            
         }
+    }
+
+    .pagesContainer {
+        scrollbar-color: rgba(var(--clr-input-secondary-bg)) transparent;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: calc(var(--doc-height, 1vh) * 100);
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     .header {
@@ -129,12 +138,13 @@
     }
 
     .PageLayout {
-        min-height: calc(100vh - 11rem - 4rem);
-        padding: 0 2rem;
+        min-height: calc(100vh - 11rem - 3rem);
+        padding: 0 max(5vw, 2rem);
+        padding-bottom: 3rem;
     }
 
     .footer {
-        height: 4rem;
+        height: 3rem;
         background-color: rgba(var(--clr-background-secondary),1);
     }
 
@@ -180,7 +190,7 @@
             }
             svg {
                 position: absolute;
-                height: 26.3em;
+                height: 26.4em;
                 fill: rgba(var(--clr-button-primary));
             }
 

@@ -1,15 +1,26 @@
+@use '../utilities/mixins' as *;
+
 .Homepage {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 
     &__top {
         display: flex;
-        gap: 5rem;
         justify-content: space-around;
         align-items: center;
+
+        .containPortraitTitle {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            @include touch {
+                flex-direction: column;
+            }
+        }        
 
         .portrait {
             height: 68vh;
@@ -52,20 +63,58 @@
 
         .titlePortfolio {
             font-family: 'Edwardian';
-            font-size: 15em;
+            font-size: calc(10em + 3vw);
             margin-top: auto;
-            margin-left: -0.7em;
+            margin-left: -0.3em;
             z-index: 2;
+
+            @include touch {
+                margin-left: 0;
+                margin-top: -1em;
+            }
         }
 
         .titleBeauty {
+            position: relative;
             font-family: 'Cinzel';
             font-weight: 300;
             font-size: 8em;
-            transform: rotate(-90deg);
-            text-align: center;
-            height: fit-content;
-            margin-left: -2em;
+            width: 0em;
+            height: 0em;
+            margin-bottom: 10rem;            
+
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 0.4em;
+
+            @include touch {
+                width: fit-content;
+                margin-bottom: 0rem;
+            }
+
+            .containText {
+                position: absolute;
+                left: -5em;
+                top: -2.5em;
+                width: 5em;
+                height: 5em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                rotate: -90deg;
+                padding-top: clamp(0em, 24vw, 5em);
+            }
+
+            p {
+                flex: 0 0 0;
+                width: fit-content;
+                text-align: center;
+                text-wrap: nowrap;
+            }
+
+            
         }
     }
 
