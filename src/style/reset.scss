@@ -1,4 +1,6 @@
-/* Box sizing rules */
+@use './utilities/mixins' as *;
+
+/*Box sizing rules */
 * {
   box-sizing: border-box;
 }
@@ -13,6 +15,10 @@ body,
 html {
   font-size: 62.5%;
   height: 100vh;
+
+  @include touch {
+    font-size: 50%;
+  }
 }
 
 body {

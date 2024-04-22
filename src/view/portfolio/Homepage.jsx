@@ -13,7 +13,12 @@ const Homepage = () => {
             <div className='containPortraitTitle'>
                 <div className='portrait'>
                     <div className='Lucile'>
-                        <img alt='Portrait de Lucile' src={LucilePortrait} />
+                        <div className='containPicture'>
+                            <img alt='Portrait de Lucile' src={LucilePortrait} />
+                            <div className='name'>
+                                <p>Lucile</p><p>Redin</p>
+                            </div>
+                        </div>
                     </div>
                     <ContainLogo className="bienvenue">
                         <Bienvenue />

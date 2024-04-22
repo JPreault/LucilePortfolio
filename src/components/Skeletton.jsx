@@ -54,7 +54,7 @@ const Skeletton = () => {
             </div>
             <div className='displayButton' onClick={() => setOpenMenu(!openMenu)}>
                 <BackgroundMenu />
-                <i className={`icon fp-3x fpl fp-chevron-right ${!openMenu ? 'open' : ''}`} />
+                <i className={`icon fp-2x fpl fp-chevron-right ${!openMenu ? 'open' : ''}`} />
             </div>
         </div>
     </div>);

@@ -149,6 +149,7 @@
     }
 
     .slideMenu {
+        --margin: min(25em, 50vw);
         visibility: hidden;
         height: 100vh;
         position: absolute;
@@ -159,7 +160,7 @@
         justify-content: center;
         z-index: 50;
         transition: transform 0.4s;
-        transform: translateX(-15em);
+        transform: translateX(calc(-1 * var(--margin)));
 
         &.open {
             transform: translateX(0em);
@@ -167,14 +168,14 @@
 
         .navigationMenu {
             height: 100%;
-            width: 15em;
+            width: var(--margin);
             background-color: rgba(var(--clr-button-primary));
         }
 
         .displayButton {
             position: relative;
             height: 0;
-            width: 6em;
+            width: 3em;
             display: flex;
             align-items: center;
             justify-content: center;
