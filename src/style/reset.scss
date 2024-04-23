@@ -5,24 +5,24 @@
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
+html, body, #root {
   overflow: hidden;
   height: 100%;
 }
 
-html {
+html{
   font-size: 62.5%;
   height: 100vh;
-
-  @include touch {
-    font-size: 50%;
-  }
+}
+body{
+  height: calc(var(--doc-height, 1vh) * 100)!important;
 }
 
-body {
-  height: calc(var(--doc-height, 1vh) * 100) !important;
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    min-height: -webkit-fill-available;
+  }
 }
 
 input::-ms-reveal {
