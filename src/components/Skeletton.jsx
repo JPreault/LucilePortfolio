@@ -60,7 +60,7 @@ const Skeletton = () => {
             <Outlet />
             <div className='footer'></div>
         </div>
-        <div className={`slideMenu ${!openMenu ? 'open' : ''}`}>
+        <div className={`slideMenu hiddenOnDesktop ${!openMenu ? 'open' : ''}`}>
             <div className='navigationMenu'>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                     <Logo />
