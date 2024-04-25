@@ -58,9 +58,9 @@ const Skeletton = () => {
                 </div >
             </div >
             <Outlet />
-            <div className='footer'></div>
+            {pathname.includes('portfolio') && <div className='footer'></div>}
         </div>
-        <div className={`slideMenu hiddenOnDesktop ${!openMenu ? 'open' : ''}`}>
+        {pathname.includes('portfolio') && <div className={`slideMenu hiddenOnDesktop ${!openMenu ? 'open' : ''}`}>
             <div className='navigationMenu'>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                     <Logo />
@@ -82,7 +82,7 @@ const Skeletton = () => {
                 <BackgroundMenu />
                 <i className={`icon fp-2x fpl fp-chevron-right ${!openMenu ? 'open' : ''}`} />
             </div>
-        </div>
+        </div>}
     </div>);
 }
 

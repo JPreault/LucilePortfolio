@@ -1,11 +1,18 @@
+@use '../utilities/mixins' as *;
+
 .About{
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 2rem;
     max-width: 100%;
+    flex-wrap: wrap;
+    row-gap: 4rem;
+    justify-content: center;   
+
 
     &__infos {
-        flex: 1 0 0;
+        flex: 0 1 auto;
         display: flex;
         flex-direction: column;
         color: rgba(var(--clr-text-primary));
@@ -38,7 +45,7 @@
         &--content {
             background-color: rgba(var(--clr-background-secondary));
             border-radius: 1em;
-            max-width: 29em;
+            max-width: 29em; 
             padding: 1em;
         }
 
@@ -56,26 +63,52 @@
     }
 
     &__picture {
-        flex: 1 0 0;
+        flex: 0 1 auto;
         display: flex;
+        justify-content: center;
+        gap: 1em;
 
         &--textContainer{
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-around;  
             
+            @include mobile {
+                visibility: hidden;
+            }
         }
 
         &--text{
             position: relative;
+            text-align: center;
 
             p{
-
+                font-family: 'Lora';
+                color: rgba(var(--clr-text-primary));
+                width: 10em;
             }
 
             img{
                 position: absolute;
-                width: 8em;
+                width: 10em;
+                top: -4em;
+                right: -5em;
+
+                &.right {
+                    transform: scale(-1,1);
+                    right: unset;
+                    left: -5em;
+                }
+
+                &.bottom {
+                    transform: scale(1,-1);
+                    top: unset;
+                    bottom: -4em;
+                }
+
+                &.bottom.right{
+                    transform: scale(-1,-1);
+                }
             }
         }
 
