@@ -20,8 +20,8 @@ root.render(
                     <Route path='interests' index element={<></>} />            {/*Page Centre Intérêts*/}
                     <Route path='contact' index element={<></>} />              {/*Page Contact*/}
                 </Route>
-                <Route path="spa" element>
-                    <Route index element={<></>} />
+                <Route path="spa">
+                    <Route index element={<></>}/>
                 </Route>
                 <Route index element={<Page404 />} />
                 <Route path='*' element={<Page404 />} />
