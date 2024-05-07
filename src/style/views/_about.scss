@@ -115,6 +115,7 @@
         &--lucile {
             height: max(20rem, calc(var(--doc-height, 1vh) * 60));
             border-radius: 1em;
+            object-fit: cover;
         }
     }
 }

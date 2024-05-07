@@ -1,0 +1,133 @@
+@use '../utilities/mixins' as *;
+
+.Contact{
+    display: flex;
+    gap: 6rem;
+    max-width: 100%;
+    flex-wrap: wrap;
+    row-gap: 4rem;
+    justify-content: center;
+    align-items: center;   
+    color: rgba(var(--clr-text-primary));
+    font-size: min(5em, 3.5vw);
+
+    .onTouch {
+        display: none;
+    }
+
+    &__text {
+        height: min(50vw, calc(var(--doc-height, 1vh) * 60));
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--doc-height, 1vh) * 15);
+        align-items: center;
+
+        &--titles {
+            display: flex;
+            flex-direction: column;
+            height: 2.4em;
+
+            .Contact__text--mainTitle {
+                width: 100%;
+                text-align: center;
+                font-family: 'Cinzel';
+                font-weight: 300;
+                text-wrap: nowrap;
+            }
+
+            .Contact__text--subTitle {
+                width: 100%;
+                position: relative;
+                
+                p {
+                    position: absolute;
+                    left: 50%;
+                    font-size: 1.2em;
+                    top: -0.3em;
+                    font-family: 'Edwardian';
+                }
+            }
+        }
+        &--infos {
+            font-family: 'Linux';
+            font-size: 2em;
+            width: fit-content;
+            display: grid;
+            grid-template-columns: 7rem 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            column-gap: 3rem;
+            row-gap: 1rem;
+            font-size: 0.5em;
+
+            .Contact__text--icon {
+                margin: auto 0 auto auto;
+                grid-column-start: 1;
+                grid-column-end: 1;
+                svg {
+                    width: 6rem;
+                    fill: rgba(var(--clr-text-primary))!important;
+                }
+            }
+            .Contact__text--text {
+                margin: auto 0;
+                grid-column-start: 2;
+                grid-column-end: 2;
+
+                &.flex {
+                    display: flex;
+                    gap: 0.4em;
+                    flex-direction: column;
+                }
+
+                &.underline, .underline {
+                    text-decoration: underline;
+                }
+
+                
+            }
+        }
+    }
+
+    &__picture {
+        height: min(50vw, calc(var(--doc-height, 1vh) * 60));
+        aspect-ratio: 10/16;
+        
+        border-radius:  max(5rem, 6vw);
+        overflow: hidden;
+
+        &--lucile {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
+        font-size: min(5em, 6vw);
+
+        &__text {
+            height: fit-content!important;
+        }
+
+        .onDesktop {
+            display: none;
+        }
+
+        .onTouch {
+            display: grid;
+        }
+    }
+
+    @include mobile {
+        .Contact__picture {
+            height: min(80vw, calc(var(--doc-height, 1vh) * 60));
+        }
+
+        .Contact__text--infos {
+            font-size: 0.7em;
+        }
+    }
+}

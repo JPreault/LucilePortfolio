@@ -6,6 +6,7 @@ import Skeletton from './components/Skeletton';
 import Page404 from './view/Page404';
 import Homepage from './view/portfolio/Homepage';
 import About from './view/portfolio/About';
+import Contact from './view/portfolio/Contact';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,15 +14,15 @@ root.render(
         <Routes>
             <Route path='/' element={<Skeletton />}>
                 <Route path='portfolio'>
-                    <Route index element={<Homepage/>} />                       {/*Page d'accueil*/}
-                    <Route path='about' element={<About/>} />                   {/*Page A Propos*/}
+                    <Route index element={<Homepage />} />                       {/*Page d'accueil*/}
+                    <Route path='about' element={<About />} />                   {/*Page A Propos*/}
                     <Route path='skills' element={<></>} />                     {/*Page Expériences et Compétences*/}
                     <Route path='professionalActions' index element={<></>} />  {/*Page Actions Professionnelles*/}
                     <Route path='interests' index element={<></>} />            {/*Page Centre Intérêts*/}
-                    <Route path='contact' index element={<></>} />              {/*Page Contact*/}
+                    <Route path='contact' index element={<Contact />} />              {/*Page Contact*/}
                 </Route>
                 <Route path="spa">
-                    <Route index element={<></>}/>
+                    <Route index element={<></>} />
                 </Route>
                 <Route index element={<Page404 />} />
                 <Route path='*' element={<Page404 />} />
