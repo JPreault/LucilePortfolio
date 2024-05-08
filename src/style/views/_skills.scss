@@ -1,0 +1,248 @@
+@use '../utilities/mixins' as *;
+
+.Skills {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4em;
+    font-family: 'Lora';
+    font-weight: 300;
+    color: rgba(var(--clr-text-primary));
+
+    &__top {
+        display: flex;
+
+        &--left {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            gap: 4em;
+
+            .Skills__top--skills {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1em 4em 1.2em;
+                width: min(100%, 30em);
+                margin: 0 auto;
+
+                text-align: center;
+                background-color: rgba(var(--clr-background-secondary));
+                border-radius: 2em;
+            }
+        }
+
+        .Skills__top--image {
+            height: 15em;
+            width: 100%;
+            border-radius: 1em;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        &--right {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            align-items: center;
+
+            .Skills__top--listExperience {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
+                margin: 0 4em;
+                position: relative;
+
+                .backgroundLine {
+                    background-color: rgba(var(--clr-text-primary));
+                    position: absolute;
+                    top: 0;
+                    left: 1.5em;
+                    width: 1px;
+                    height: 100%;
+                    z-index: 0;
+                }
+
+                .experience {
+                    display: flex;
+                    gap: 1em;
+
+                    .year {
+                        height: 1.3em;
+                        width: 3em;
+                        flex-shrink: 0;
+                        z-index: 1;
+                        text-align: center;
+                        background-color: rgba(var(--clr-background-neutral));
+
+                        &.last {
+                            height: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+        .title {
+            font-family: 'Cinzel';
+            text-transform: uppercase;
+            font-size: 2.2em;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    &__middle {
+        margin: 2em 0 0 0;
+        display: flex;
+
+        &--bts {
+            width: 50%;
+
+            .Skills__middle--text {
+                margin: 20% 0 0 auto;
+                text-align: justify;
+                width: min(100%, 28em);
+            }
+        }
+
+        &--containImage {
+            width: 50%;
+
+            .Skills__middle--image {
+                margin: 0 auto;
+                width: 45%;
+                border-radius: 2em;
+                aspect-ratio: 37/50;
+                object-fit: cover;
+            }
+        }
+        
+    }
+
+    &__bottom {
+        margin: 2em 0;
+        display: flex;
+
+        &--containImage {
+            width: 50%;
+
+            .Skills__bottom--image {
+                margin: 0 auto;
+                width: 80%;
+                border-radius: 2em;
+                aspect-ratio: 50/30;
+                object-fit: cover;
+            }
+        }
+
+        &--atout {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .Skills__bottom--text {
+                margin: 0 auto 0 0;
+                text-align: justify;
+                width: min(100%, 28em);
+
+                .title {
+                    text-align: center;
+                }
+            }
+        }        
+    }
+
+    &__middle, &__bottom {
+        font-family: 'Lora';
+        .title {
+            font-family: 'Seasons';
+            text-transform: uppercase;
+            font-size: 2.2em;
+            margin-bottom: 0.1em;
+        }
+    }
+
+    .onTouch {
+        display: none;
+    }
+
+    @media screen and (max-width: 1400px) {
+
+        .Skills__top, .Skills__middle, .Skills__bottom {
+            margin-top: 2em;
+            width: 100%;
+            flex-direction: column;
+            gap: 2em;
+            align-items: center;
+
+            * {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            &--left, &--right {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &--text {
+                margin: 0;
+
+                .title {
+                    text-align: center;
+                }
+            }
+
+            &--image {
+                width: min(100%, 40em);
+            }
+
+            &--bts, &--atout {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .doubleImage {
+            width: min(100%, 26em);
+            aspect-ratio: 100/77;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 2em;
+
+            &--image {
+                position: absolute;
+
+                &.im1 {
+                    top: 0;
+                    right: 0;
+                    height: 80%;
+                    border-radius: 1em;
+                    aspect-ratio: 35/50;
+                    object-fit: cover;
+                }
+
+                &.im2 {
+                    left: 0;
+                    bottom: 0;
+                    height: 60%;
+                    border-radius: 1em;
+                    aspect-ratio: 50/30;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .onDesktop {
+            display: none;
+        }
+
+        .onTouch {
+            display: inline-flex;
+        }
+    }
+}

@@ -7,6 +7,7 @@ import Page404 from './view/Page404';
 import Homepage from './view/portfolio/Homepage';
 import About from './view/portfolio/About';
 import Contact from './view/portfolio/Contact';
+import Skills from './view/portfolio/Skills';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,7 +17,7 @@ root.render(
                 <Route path='portfolio'>
                     <Route index element={<Homepage />} />                       {/*Page d'accueil*/}
                     <Route path='about' element={<About />} />                   {/*Page A Propos*/}
-                    <Route path='skills' element={<></>} />                     {/*Page Expériences et Compétences*/}
+                    <Route path='skills' element={<Skills />} />                     {/*Page Expériences et Compétences*/}
                     <Route path='professionalActions' index element={<></>} />  {/*Page Actions Professionnelles*/}
                     <Route path='interests' index element={<></>} />            {/*Page Centre Intérêts*/}
                     <Route path='contact' index element={<Contact />} />              {/*Page Contact*/}
