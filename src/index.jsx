@@ -8,6 +8,7 @@ import Homepage from './view/portfolio/Homepage';
 import About from './view/portfolio/About';
 import Contact from './view/portfolio/Contact';
 import Skills from './view/portfolio/Skills';
+import ProfessionalAction from './view/portfolio/ProfessionalAction';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,12 +16,12 @@ root.render(
         <Routes>
             <Route path='/' element={<Skeletton />}>
                 <Route path='portfolio'>
-                    <Route index element={<Homepage />} />                       {/*Page d'accueil*/}
-                    <Route path='about' element={<About />} />                   {/*Page A Propos*/}
-                    <Route path='skills' element={<Skills />} />                     {/*Page Expériences et Compétences*/}
-                    <Route path='professionalActions' index element={<></>} />  {/*Page Actions Professionnelles*/}
-                    <Route path='interests' index element={<></>} />            {/*Page Centre Intérêts*/}
-                    <Route path='contact' index element={<Contact />} />              {/*Page Contact*/}
+                    <Route index element={<Homepage />} />
+                    <Route path='about' element={<About />} />
+                    <Route path='skills' element={<Skills />} />
+                    <Route path='professionalActions' index element={<ProfessionalAction />} />
+                    <Route path='interests' index element={<></>} />
+                    <Route path='contact' index element={<Contact />} />
                 </Route>
                 <Route path="spa">
                     <Route index element={<></>} />

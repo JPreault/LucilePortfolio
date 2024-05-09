@@ -1,0 +1,196 @@
+@use "../utilities/mixins" as *; 
+
+.ProfessionalAction {
+    font-size: 1.4em;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+
+    &__challenge--text, &__maquillage--text, &__offres--text {
+        width: 50%;
+
+        .containText {
+            width: min(100%, 30em);
+        }
+
+        .title {
+            display: flex;
+            font-size: 2em;
+            gap: 0.2em;
+            align-items: flex-end;
+            position: relative;
+            width: fit-content;
+            margin-bottom: 0.2em;
+
+            .number {
+                font-size: 1.3em;
+                font-family: 'Seasons';
+                color: rgba(var(--clr-text-ternary));
+                font-weight: 500;
+                height: 1.1em;
+            }
+
+            .name {
+                font-family: 'Seasons';
+                color: rgba(var(--clr-text-secondary));
+                text-transform: uppercase;
+            }
+
+            .location {
+                margin-bottom: -1rem;
+                font-family: 'Moontime';
+                color: rgba(var(--clr-button-primary-hover));
+            }
+        }
+
+        .text {
+            width: min(100%, 30em);
+            text-align: justify;
+        }
+    }
+
+    &__challenge {
+        display: flex;
+        width: 100%;
+
+        &--text {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 4em;
+        }
+
+        &--image {
+            width: min(100%, 35em);
+        }
+    }
+
+    &__maquillage {
+        display: flex;
+        flex-direction: row-reverse;
+
+        &--text {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 4em;
+        }
+
+        &--image {
+            margin: 2em 0 2em 0;
+            width: 50%;
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 4em;
+
+            .containImage {
+                position: relative;
+                margin: 0 4em;
+                width: min(100%, 22em);
+                aspect-ratio: 100/85;
+            }
+
+            .maquillage {
+                position: absolute;
+
+                &.im1 {
+                    top: 0;
+                    right: 0;
+                    width: 45%;
+                    border-radius: 1em;
+                    aspect-ratio: 35/50;
+                    object-fit: cover;
+                }
+
+                &.im2 {
+                    left: 0;
+                    bottom: 0;
+                    width: 70%;
+                    border-radius: 1em;
+                    aspect-ratio: 35/30;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &__offres {
+        display: flex;
+
+        &--text {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 4em;
+
+            .title {
+                align-items: center!important;
+                margin-bottom:0.5em!important;
+            }
+        }
+
+        &--image {
+            width: min(100%, 35em);
+        }
+    }
+
+    &__offres2 {
+        display: flex;
+        padding: 4em 0;
+        align-items: center;
+
+        &--image {
+            width: 50%;
+
+            .offreSpé {
+                margin-left: auto;
+                margin-right: 8em;
+                width: min(100%, 22em);
+            }
+
+            .soinsVisage {
+                width: min(100%, 35em);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        gap: 2em;
+
+        &__challenge, &__maquillage, &__offres, &__offres2 {
+            flex-direction: column;
+            gap: 2em;
+            width: 100%;
+            align-items: center;
+            padding: 0;
+
+            &--text, &--image {
+                padding: 0;
+                margin: 0;
+                width: min(100%, 30em);
+            }
+        }
+
+        &__offres2 {
+            flex-direction: column-reverse;
+
+            &--text, &--image, img {
+                padding: 0;
+                margin: 0 auto!important;
+            }
+        }
+    }
+
+    @include mobile {
+        .title {
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .location {
+                text-align: center;
+                min-width: 100%;
+            }
+        }
+    }
+}
