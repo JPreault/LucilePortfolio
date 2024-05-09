@@ -9,6 +9,7 @@ import About from './view/portfolio/About';
 import Contact from './view/portfolio/Contact';
 import Skills from './view/portfolio/Skills';
 import ProfessionalAction from './view/portfolio/ProfessionalAction';
+import Interest from './view/portfolio/Interest';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +21,7 @@ root.render(
                     <Route path='about' element={<About />} />
                     <Route path='skills' element={<Skills />} />
                     <Route path='professionalActions' index element={<ProfessionalAction />} />
-                    <Route path='interests' index element={<></>} />
+                    <Route path='interests' index element={<Interest />} />
                     <Route path='contact' index element={<Contact />} />
                 </Route>
                 <Route path="spa">
