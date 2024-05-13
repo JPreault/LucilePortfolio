@@ -130,26 +130,19 @@
         }
 
         &--image {
+            display: flex;
+            gap: 1em;
             width: min(100%, 35em);
-        }
-    }
+            align-items: center;
 
-    &__offres2 {
-        display: flex;
-        padding: 4em 0;
-        align-items: center;
-
-        &--image {
-            width: 50%;
-
-            .offreSpé {
-                margin-left: auto;
-                margin-right: 8em;
-                width: min(100%, 22em);
+            .offres {
+                width: 57.45%;
+                height: fit-content;
             }
 
-            .soinsVisage {
-                width: min(100%, 35em);
+            .offreSpé {
+                width: 42.55%;
+                height: fit-content;
             }
         }
     }
@@ -157,7 +150,7 @@
     @media screen and (max-width: 1400px) {
         gap: 2em;
 
-        &__challenge, &__maquillage, &__offres, &__offres2 {
+        &__challenge, &__maquillage, &__offres {
             flex-direction: column;
             gap: 2em;
             width: 100%;
@@ -168,15 +161,6 @@
                 padding: 0;
                 margin: 0;
                 width: min(100%, 30em);
-            }
-        }
-
-        &__offres2 {
-            flex-direction: column-reverse;
-
-            &--text, &--image, img {
-                padding: 0;
-                margin: 0 auto!important;
             }
         }
     }
@@ -190,6 +174,20 @@
             .location {
                 text-align: center;
                 min-width: 100%;
+            }
+        }
+
+        &__offres--image {
+            flex-direction: column!important;
+
+            .offres {
+                width: 100%;
+                height: fit-content;
+            }
+
+            .offreSpé {
+                width: 100%;
+                height: fit-content;
             }
         }
     }

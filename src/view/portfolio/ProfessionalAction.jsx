@@ -4,7 +4,6 @@ import Maquillage1 from '../../images/Maquillage1.png';
 import Maquillage2 from '../../images/Maquillage2.png';
 import Offres from '../../images/Offres.png';
 import OffreSpé from '../../images/OffreSpé.png';
-import SoinsVisage from '../../images/SoinsVisage.png';
 
 const ProfessionalAction = () => {
 
@@ -56,14 +55,7 @@ const ProfessionalAction = () => {
             </div>
             <div className='ProfessionalAction__offres--image'>
                 <img className='offres' alt='Offres' src={Offres} />
-            </div>
-        </div>
-        <div className='ProfessionalAction__offres2'>
-            <div className='ProfessionalAction__offres2--image'>
                 <img className='offreSpé' alt='OffreSpé' src={OffreSpé} />
-            </div>
-            <div className='ProfessionalAction__offres2--image'>
-                <img className='soinsVisage' alt='SoinsVisage' src={SoinsVisage} />
             </div>
         </div>
     </PageLayout >);
