@@ -1,6 +1,231 @@
 .Interest {
+    font-size: 1.4em;
+    font-weight: 300;
+    font-family: 'Cinzel';
+    color: rgba(var(--clr-text-primary))!important;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    --gap: min(3vw, 1em);
+    --width: min(100%, 50em);
 
     img, video {
-        width: 10rem;
+        border-radius: 0.3em;
+        cursor: pointer;
+    }
+
+    .play {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            i {
+                opacity: 0.6!important;
+            }
+        }
+
+        i {
+            opacity: 1;
+            background-color: rgba(var(--clr-text-soft));
+            color: rgba(var(--clr-text-neutral));
+            width: 1.8em;
+            height: 1.8em;
+            padding-top: 0.4em;
+            padding-left: 0.62em;
+            border-radius: 50%;
+        }
+    }
+
+    .title {
+        font-size: min(5vw, 1.3em);
+        text-align: center;
+    }
+
+    &__equitation {
+
+        &--containMedia {
+            width: var(--width);
+            display: flex;
+            position: relative;
+            margin: 0 auto;
+            gap: var(--gap);
+
+            .title {
+                position: absolute;
+                width: calc(var(--width) / 3);
+                background-color: rgba(var(--clr-background-primary));
+                top: calc(25% - 0.8em);
+                left: 33%;
+            }
+    
+            .leftPart {
+                width: calc(var(--width) / 3 * 2);
+                display: flex;
+                gap: var(--gap);
+                flex-direction: column;
+
+                .top {
+                    display: flex;
+                    width: 100%;
+                    gap: var(--gap);
+                }
+
+                .bottom {
+                    display: flex;
+                    width: 100%;
+                    gap: var(--gap);
+                }
+
+                .equitation1 {
+                    width: 50%;
+                    aspect-ratio: 16/9;
+                    position: relative;
+
+                    video {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: fill;
+                    }
+                }
+
+                .equitation2 {
+                    width: 50%;
+                    aspect-ratio: 16/9;
+
+                    img {
+                        margin: 0 auto;
+                        width: 37.15%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                .equitation3 {
+                    width: 30%;
+                    aspect-ratio: 1/1;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                    }
+                }
+
+                .equitation4 {
+                    width: 70%;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: left center;
+                    }
+                }
+            }
+    
+            .rightPart {
+                width: calc(var(--width) / 3);
+                aspect-ratio: 9/9;
+
+                .equitation5 {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: top center;
+                }
+            }
+        }
+    }
+
+    &__ski {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+        &--containMedia {
+            display: flex;
+            gap: var(--gap);
+            width: var(--width);
+            margin: 0 auto;
+
+            img, video {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+
+            .ski1 {
+                width: 40.70%;
+                aspect-ratio: 16/9;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .ski2 {
+                width: 17.17%;
+                aspect-ratio: 3/4;
+            }
+
+            .ski3 {
+                width: 42.13%;
+                aspect-ratio: 46/25;
+            }
+        }
+    }
+
+    &__musculation {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+
+        &--containMedia {
+            display: flex;
+            gap: var(--gap);
+            width: var(--width);
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: fill;
+            }
+
+            .musculation1 {
+                width: 47.37%;
+            }
+
+            .musculation2 {
+                width: 21.05%;
+            }
+
+            .musculation3 {
+                width: 31.58%;
+            }
+        }
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img, video {
+        max-height: 80%;
+        max-width: 80%;
     }
 }
