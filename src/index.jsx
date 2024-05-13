@@ -10,6 +10,7 @@ import Contact from './view/portfolio/Contact';
 import Skills from './view/portfolio/Skills';
 import ProfessionalAction from './view/portfolio/ProfessionalAction';
 import Interest from './view/portfolio/Interest';
+import Room from './view/Room';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,9 +25,7 @@ root.render(
                     <Route path='interests' index element={<Interest />} />
                     <Route path='contact' index element={<Contact />} />
                 </Route>
-                <Route path="spa">
-                    <Route index element={<></>} />
-                </Route>
+                <Route path="spa" element={<Room />} />
                 <Route index element={<Page404 />} />
                 <Route path='*' element={<Page404 />} />
             </Route>

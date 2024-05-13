@@ -1,0 +1,203 @@
+@use '../utilities/mixins' as *;
+
+.Room {
+    --background-color: #575555;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    overflow-x: auto;
+    background-color: var(--background-color);
+    font-size: 3em;
+    user-select: none;
+
+    &.open {
+        z-index: 1;
+    }
+
+    .containRoom {
+        position: relative;
+        height: 100%;
+        aspect-ratio: 16/9;
+        margin: 0 auto;
+    }
+
+    .ContainLogo {
+        position: absolute;
+        z-index: 4;
+        height: calc(var(--doc-height, 1vh) * 4.6)!important;
+        width: calc(var(--doc-height, 1vh) * 4.5)!important;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                animation-duration: 0.7s;
+                //stroke-width: 0.5em;
+            }
+            
+        }
+
+        &.room1 {
+            top: 46.2%;
+            left: 59%;
+        }
+        
+        &.room2 {
+            top: 51%;
+            left: 42%;
+        }
+        
+        &.room3 {
+            top: 42.3%;
+            left: 54%;
+        }
+        
+        &.room4 {
+            top: 82%;
+            left: 25%;
+        }
+
+        &:hover {
+            svg {
+                stroke: #313131;
+            }
+        }
+
+        svg {
+            fill: #F0983F;
+            //stroke-width: 0.1em;
+            //stroke: #313131;
+            transform-origin: center;
+            animation: 1.5s linear infinite rotate;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate3d(0, 1, 0, 0) translateY(-10px);
+            }
+            50% {
+                transform: rotate3d(0, 1, 0, 180deg) translateY(0px);
+            }
+            100% {
+                transform: rotate3d(0, 1, 0, 360deg)translateY(-10px);
+            }
+        }
+    }
+    
+    .roomImage {
+        height: 100%;
+        aspect-ratio: 16/9;
+        max-width: unset;
+        z-index: 3;
+    }
+
+    .menu {
+        z-index: 5;
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        width: min(calc(100vw - 2em), 5em);
+        height: min(calc(100vw - 2em), 5em);
+        background-color: rgba(var(--clr-background-primary));
+        border-radius: 1em;
+        border: solid 0.2em rgba(var(--clr-button-secondary));
+        transition: height 0.2s linear, width 0.2s linear;
+        box-shadow: 1px 2px 2px rgba(var(--clr-border-primary), 0.25);
+
+        @include touch {
+            width: min(calc(100vw - 2em), 3em);
+            height: min(calc(100vw - 2em), 3em);
+            border-radius: 0.4em;
+            border-width: 0.1em;
+        }
+
+        &:hover {
+            width: min(calc(100vw - 2em), 15em);
+            height: min(calc(100vw - 2em), 15em);
+            border-width: 0.3em;
+        }
+
+        .containMenu {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        img, svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            z-index: 2;
+
+            .room {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .loader {
+        z-index: 51;
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: calc(var(--doc-height, 1vh) * 100);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        background-color: var(--background-color);
+    }
+
+    .popup {
+        z-index: 51;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+
+        @include touch {
+            padding: 0.4em;
+
+            .close {
+                font-size: 1em!important;
+                top: 0.3em!important;
+                right: 0.3em!important;
+            }
+
+            iframe {
+                border-radius: 0.5em!important;
+            }
+        }
+
+        .close {
+            position: absolute;
+            top: 0.5em;
+            right: 0.5em;
+            color: rgba(var(--clr-background-error));
+            background-color: white;
+            border-radius: 50%;
+            rotate: 45deg;
+            font-size: 1.5em;
+        }
+
+        iframe {
+            border-radius: 1em;
+            scrollbar-color: rgba(var(--clr-input-secondary-bg)) transparent;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: rgba(var(--clr-background-primary));
+            border: none;
+        }
+    }
+}

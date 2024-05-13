@@ -27,6 +27,16 @@
         align-items: center;
         padding: 2rem;
 
+        &.iframe {
+            visibility: hidden;
+            height: 0;
+
+            *, .bold {
+                visibility: hidden!important;
+                height: 0;
+            }
+        }
+
         .Logo {
             width: 7rem;
             height: 7rem;
@@ -39,6 +49,7 @@
                 height: 8rem;
                 border-radius: 1.5rem;
                 box-shadow: 1px 2px 2px rgba(var(--clr-border-primary), 0.25);
+                z-index: 0;
             }
         }        
 
@@ -140,6 +151,11 @@
     .footer {
         height: 3rem;
         background-color: rgba(var(--clr-background-secondary),1);
+
+        &.iframe {
+            height: 0;
+            visibility: hidden!important;
+        }
     }
 
     .slideMenu {

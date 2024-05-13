@@ -8,8 +8,9 @@ import useOnResize from '../hooks/useOnResize';
 
 const Skeletton = () => {
     const navigate = useNavigate();
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
     const onPortfolio = pathname.includes('portfolio');
+    const onIframe = search.includes('page=clean');
     const [openMenu, setOpenMenu] = useState(false);
     const page = useRef(null);
 
@@ -43,18 +44,18 @@ const Skeletton = () => {
 
     return (<div className="Skeletton">
         <div className='pagesContainer'>
-            <div className='header' ref={page}>
+            <div className={'header' + (onIframe ? ' iframe' : '')} ref={page}>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                     <Logo />
                 </ContainLogo>
                 {onPortfolio && <div className="separator hiddenOnTouch" />}
                 <div className='Menu'>
                     {onPortfolio && <>
-                        <Link className="hiddenOnTouch" selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} setOpenMenu={setOpenMenu}/>
-                        <Link className="hiddenOnTouch" selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} setOpenMenu={setOpenMenu}/>
-                        <Link className="hiddenOnTouch" selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} setOpenMenu={setOpenMenu}/>
-                        <Link className="hiddenOnTouch" selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} setOpenMenu={setOpenMenu}/>
-                        <Link className="hiddenOnTouch" selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} setOpenMenu={setOpenMenu}/>
+                        <Link className="hiddenOnTouch" selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} setOpenMenu={setOpenMenu} />
+                        <Link className="hiddenOnTouch" selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} setOpenMenu={setOpenMenu} />
+                        <Link className="hiddenOnTouch" selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} setOpenMenu={setOpenMenu} />
+                        <Link className="hiddenOnTouch" selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} setOpenMenu={setOpenMenu} />
+                        <Link className="hiddenOnTouch" selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} setOpenMenu={setOpenMenu} />
                     </>}
                     <ContainLogo className="immersive" onClick={changeInterface}>
                         <Immersive />
@@ -63,9 +64,9 @@ const Skeletton = () => {
                 </div >
             </div >
             <Outlet />
-            {pathname.includes('portfolio') && <div className='footer'></div>}
+            {pathname.includes('portfolio') && <div className={'footer' + (onIframe ? ' iframe' : '')}></div>}
         </div>
-        {pathname.includes('portfolio') && <div className={`slideMenu hiddenOnDesktop ${openMenu ? 'open' : ''}`}>
+        {pathname.includes('portfolio') && !onIframe && <div className={`slideMenu hiddenOnDesktop ${openMenu ? 'open' : ''}`}>
             <div className='navigationMenu'>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                     <Logo />
@@ -74,13 +75,13 @@ const Skeletton = () => {
                 <div className='Menu'>
                     <Link selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} setOpenMenu={setOpenMenu} />
                     <div className="separator" />
-                    <Link selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} setOpenMenu={setOpenMenu}/>
+                    <Link selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} setOpenMenu={setOpenMenu} />
                     <div className="separator" />
-                    <Link selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} setOpenMenu={setOpenMenu}/>
+                    <Link selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} setOpenMenu={setOpenMenu} />
                     <div className="separator" />
-                    <Link selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} setOpenMenu={setOpenMenu}/>
+                    <Link selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} setOpenMenu={setOpenMenu} />
                     <div className="separator" />
-                    <Link selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} setOpenMenu={setOpenMenu}/>
+                    <Link selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} setOpenMenu={setOpenMenu} />
                 </div>
             </div>
             <div className='displayButton' onClick={() => setOpenMenu(!openMenu)}>
