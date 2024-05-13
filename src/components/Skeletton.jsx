@@ -3,7 +3,7 @@ import { ReactComponent as Immersive } from '../images/icones/immersive.svg';
 import { ReactComponent as Logo } from '../images/icones/logo.svg';
 import { ReactComponent as BackgroundMenu } from '../images/autres/backgroundMenu.svg';
 import ContainLogo from './ContainLogo';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import useOnResize from '../hooks/useOnResize';
 
 const Skeletton = () => {
@@ -11,6 +11,7 @@ const Skeletton = () => {
     const { pathname } = useLocation();
     const onPortfolio = pathname.includes('portfolio');
     const [openMenu, setOpenMenu] = useState(false);
+    const page = useRef(null);
 
     const links = {
         home: pathname.includes('spa') ? '/spa' : '/portfolio',
@@ -36,20 +37,24 @@ const Skeletton = () => {
 
     updateHeight();
 
+    useEffect(() => {
+        page.current.scrollIntoView()
+    }, [pathname])
+
     return (<div className="Skeletton">
         <div className='pagesContainer'>
-            <div className='header'>
+            <div className='header' ref={page}>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                     <Logo />
                 </ContainLogo>
                 {onPortfolio && <div className="separator hiddenOnTouch" />}
                 <div className='Menu'>
                     {onPortfolio && <>
-                        <Link className="hiddenOnTouch" selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} />
-                        <Link className="hiddenOnTouch" selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} />
-                        <Link className="hiddenOnTouch" selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} />
-                        <Link className="hiddenOnTouch" selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} />
-                        <Link className="hiddenOnTouch" selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} />
+                        <Link className="hiddenOnTouch" selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} setOpenMenu={setOpenMenu}/>
+                        <Link className="hiddenOnTouch" selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} setOpenMenu={setOpenMenu}/>
+                        <Link className="hiddenOnTouch" selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} setOpenMenu={setOpenMenu}/>
+                        <Link className="hiddenOnTouch" selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} setOpenMenu={setOpenMenu}/>
+                        <Link className="hiddenOnTouch" selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} setOpenMenu={setOpenMenu}/>
                     </>}
                     <ContainLogo className="immersive" onClick={changeInterface}>
                         <Immersive />
@@ -60,27 +65,27 @@ const Skeletton = () => {
             <Outlet />
             {pathname.includes('portfolio') && <div className='footer'></div>}
         </div>
-        {pathname.includes('portfolio') && <div className={`slideMenu hiddenOnDesktop ${!openMenu ? 'open' : ''}`}>
+        {pathname.includes('portfolio') && <div className={`slideMenu hiddenOnDesktop ${openMenu ? 'open' : ''}`}>
             <div className='navigationMenu'>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
                     <Logo />
                 </ContainLogo>
                 <div className="separator main" />
                 <div className='Menu'>
-                    <Link selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} />
+                    <Link selected={pathname === links.about} link={links.about} text={<><span>a</span> propos</>} setOpenMenu={setOpenMenu} />
                     <div className="separator" />
-                    <Link selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} />
+                    <Link selected={pathname === links.skills} link={links.skills} text={<><span>m</span>es expériences<br />et mes compétences</>} setOpenMenu={setOpenMenu}/>
                     <div className="separator" />
-                    <Link selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} />
+                    <Link selected={pathname === links.professionalActions} link={links.professionalActions} text={<><span>m</span>es actions<br />professionnelles</>} setOpenMenu={setOpenMenu}/>
                     <div className="separator" />
-                    <Link selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} />
+                    <Link selected={pathname === links.interests} link={links.interests} text={<><span>m</span>es centres<br />d'intérêt</>} setOpenMenu={setOpenMenu}/>
                     <div className="separator" />
-                    <Link selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} />
+                    <Link selected={pathname === links.contact} link={links.contact} text={<><span>c</span>ontact</>} setOpenMenu={setOpenMenu}/>
                 </div>
             </div>
             <div className='displayButton' onClick={() => setOpenMenu(!openMenu)}>
                 <BackgroundMenu />
-                <i className={`icon fp-2x fpl fp-chevron-right ${!openMenu ? 'open' : ''}`} />
+                <i className={`icon fp-2x fpl fp-chevron-right ${openMenu ? 'open' : ''}`} />
             </div>
         </div>}
     </div>);
@@ -91,13 +96,19 @@ const Link = (data) => {
         className = "",
         selected = false,
         link = "",
-        text = ""
+        text = "",
+        setOpenMenu
     } = data;
 
     const navigate = useNavigate();
 
+    function changePage() {
+        navigate(link);
+        setOpenMenu(false);
+    }
+
     return (
-        <div className={`menuButton ${className} ${selected ? "selected" : ""}`} onClick={() => navigate(link)}>
+        <div className={`menuButton ${className} ${selected ? "selected" : ""}`} onClick={() => changePage()}>
             <p className="light">
                 {text}
             </p>
