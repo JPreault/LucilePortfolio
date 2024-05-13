@@ -1,5 +1,5 @@
 import PageLayout from '../../components/layout/PageLayout';
-import Background1 from '../../images/Background1.png';
+import Background1 from '../../images/Background1.JPG';
 import Background2 from '../../images/Background2.png';
 import Background3 from '../../images/Background3.png';
 
