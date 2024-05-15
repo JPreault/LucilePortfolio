@@ -147,6 +147,7 @@
     }
 
     .PageLayout {
+        background-color: rgba(var(--clr-background-primary),1);
         min-height: calc((var(--doc-height, 1vh) * 100) - 11rem - 3rem);
         margin: 0 max(5vw, 2rem);
         padding-bottom: 3rem;
