@@ -14,6 +14,7 @@ const Room = () => {
     const [room, setRoom] = useState("room1");
     const [openPortfolio, setOpenPortfolio] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [openMenu, setOpenMenu] = useState(false);
     const roomRef = useRef(null);
     const containRoomRef = useRef(null);
 
@@ -57,6 +58,7 @@ const Room = () => {
 
     function openRoom(newRoom) {
         if(newRoom !== room) {
+            setOpenMenu(false);
             setRoom(newRoom);
             setLoading(true);
         }
@@ -72,7 +74,8 @@ const Room = () => {
             </ContainLogo>
             {renderRoom()}
         </div>
-        <div className='menu'>
+        <div className={'openMenu' + (openMenu ? " open" : "")}  onClick={() => setOpenMenu(!openMenu)}></div>
+        <div className={'menu' + (openMenu ? " open" : "")}>
             <div className='containMenu'>
                 <svg width="1744" height="1739" viewBox="0 0 1744 1739" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="1744" height="1739" />

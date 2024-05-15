@@ -93,24 +93,42 @@
         z-index: 3;
     }
 
-    .menu {
-        z-index: 5;
+    .openMenu {
+        z-index: 6;
         position: fixed;
         bottom: 1em;
         right: 1em;
         width: min(calc(100vw - 2em), 3em);
         height: min(calc(100vw - 2em), 3em);
+        cursor: pointer;
+
+        &.open {
+            z-index: 4;
+            bottom: 0;
+            right: 0;
+            width: 100vw;
+            height: calc(var(--doc-height, 1vh) * 100);
+        }
+    }
+
+    .menu {
+        z-index: 5;
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        max-width: min(50vw, calc(var(--doc-height, 1vh) * 50));
+        max-height: min(50vw, calc(var(--doc-height, 1vh) * 50));
+        width: 3em;
+        height: 3em;
         background-color: rgba(var(--clr-background-primary));
         border-radius: 0.4em;
         border: solid 0.1em rgba(var(--clr-button-secondary));
-        transition: height 0.2s linear, width 0.2s linear;
+        transition: height 0.2s linear, width 0.2s linear, border-width 0.2s linear;
         box-shadow: 1px 2px 2px rgba(var(--clr-border-primary), 0.25);
 
-        &:hover {
-            width: min(calc(100vw - 2em), 15em);
-            height: min(calc(100vw - 2em), 15em);
-            max-width: min(50vw, calc(var(--doc-height, 1vh) * 50));
-            max-height: min(50vw, calc(var(--doc-height, 1vh) * 50));
+        &.open {
+            width: 15em;
+            height: 15em;
             border-width: 0.3em;
 
             @include mobile {
