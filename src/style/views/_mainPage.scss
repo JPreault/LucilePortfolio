@@ -13,6 +13,7 @@
     }
 
     .pagesContainer {
+        background-color: rgba(var(--clr-background-primary),1);
         scrollbar-color: rgba(var(--clr-input-secondary-bg)) transparent;
         position: fixed;
         top: 0;
