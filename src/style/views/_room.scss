@@ -98,25 +98,25 @@
         position: fixed;
         bottom: 1em;
         right: 1em;
-        width: min(calc(100vw - 2em), 5em);
-        height: min(calc(100vw - 2em), 5em);
+        width: min(calc(100vw - 2em), 3em);
+        height: min(calc(100vw - 2em), 3em);
         background-color: rgba(var(--clr-background-primary));
-        border-radius: 1em;
-        border: solid 0.2em rgba(var(--clr-button-secondary));
+        border-radius: 0.4em;
+        border: solid 0.1em rgba(var(--clr-button-secondary));
         transition: height 0.2s linear, width 0.2s linear;
         box-shadow: 1px 2px 2px rgba(var(--clr-border-primary), 0.25);
-
-        @include touch {
-            width: min(calc(100vw - 2em), 3em);
-            height: min(calc(100vw - 2em), 3em);
-            border-radius: 0.4em;
-            border-width: 0.1em;
-        }
 
         &:hover {
             width: min(calc(100vw - 2em), 15em);
             height: min(calc(100vw - 2em), 15em);
+            max-width: min(50vw, calc(var(--doc-height, 1vh) * 50));
+            max-height: min(50vw, calc(var(--doc-height, 1vh) * 50));
             border-width: 0.3em;
+
+            @include mobile {
+                max-width: 100vw;
+                max-height: 100vw;
+            }
         }
 
         .containMenu {
