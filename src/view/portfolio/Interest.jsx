@@ -23,11 +23,15 @@ const Interest = () => {
     function openMedia(event, source, type) {
         event.preventDefault();
         event.stopPropagation();
+        console.log('rr');
         if(!open) {
+            console.log('dd');
             setSource(source);
             setType(type);
             setOpen(true);
         }
+        
+        console.log(' ');
     };
 
     function needClose(evt) {
@@ -43,10 +47,10 @@ const Interest = () => {
                 <div className="leftPart">
                     <div className="top">
                         <div className="equitation1">
-                            <div className="play" onClick={(event)=> openMedia(event,equitation3, "video")}>
+                            <div className="play" onClick={(event)=> openMedia(event, equitation3, "video")}>
                                 <i className="fps fp-play-rounded"></i>
                             </div>
-                            <video alt="Equitation1">
+                            <video alt="Equitation1" onClick={(event)=> openMedia(event, equitation3, "video")}>
                                 <source src={equitation3 + "#t=0.1"} type="video/mp4" />
                             </video>
                         </div>
@@ -71,7 +75,7 @@ const Interest = () => {
                     <div className="play" onClick={(event)=> openMedia(event,ski, "video")}>
                         <i className="fps fp-play-rounded"></i>
                     </div>
-                    <video alt="Ski1">
+                    <video alt="Ski1" onClick={(event)=> openMedia(event,ski, "video")}>
                         <source src={ski + "#t=0.1"} type="video/mp4" />
                     </video>
                 </div>
