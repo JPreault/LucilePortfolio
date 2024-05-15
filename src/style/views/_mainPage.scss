@@ -8,6 +8,10 @@
     position: relative;
     max-height: calc(var(--doc-height, 1vh) * 100);
 
+    &.iframe {
+        font-size: 0.8em;
+    }
+
     .pagesContainer {
         scrollbar-color: rgba(var(--clr-input-secondary-bg)) transparent;
         position: fixed;

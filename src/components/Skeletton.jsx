@@ -42,7 +42,7 @@ const Skeletton = () => {
         page.current.scrollIntoView()
     }, [pathname])
 
-    return (<div className="Skeletton">
+    return (<div className={'Skeletton' + (onIframe ? ' iframe' : '')}>
         <div className='pagesContainer'>
             <div className={'header' + (onIframe ? ' iframe' : '')} ref={page}>
                 <ContainLogo className={`Logo ${!onPortfolio && 'spa'}`} onClick={() => navigate(links.home)}>
