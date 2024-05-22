@@ -10,8 +10,8 @@ const Skills = () => {
             <div className='Skills__top--left'>
                 <div className='Skills__top--skills'>
                     <p className='title'>Compétences</p>
-                    <p>- Vente et conseille en parfumerie</p>
-                    <p>- Épilation jambes, aiselles, sourcils et visage</p>
+                    <p>- Vente et conseil en parfumerie</p>
+                    <p>- Épilation jambes, aisselles, sourcils et visage</p>
                     <p>- Soin visage et corps</p>
                     <p>- Massages visage (relaxant et kobido)</p>
                     <p>- Massages corps (ayurvédique, balinais, orientale, polynésien, femme enceinte, pierres chaudes, détox, réflexologie jambes et pieds)</p>
